@@ -1,0 +1,342 @@
+<!-- ========================================================
+     БЛОК «ОТЗЫВЫ О НАШИХ СПЕЦИАЛИСТАХ» (КЛИНИКА «КАТРИН», catherine-salon.ru)
+     Страница: https://catherine-salon.ru/reviews
+     Стиль: Строгая геометрия, прямые углы, без скруглений (border-radius: 0)
+     Интеграция: Портал «ПроДокторов» (переход на карточку каждого врача для написания отзыва)
+     Для вставки в отдельный блок T123 («HTML-код») на Tilda
+     ======================================================== -->
+
+<div id="catherine-specialists-reviews-root" class="cs-specialists-section">
+  <style>
+    /* Базовые стили секции специалистов */
+    .cs-specialists-section {
+      width: 100%;
+      max-width: 1200px;
+      margin: 60px auto 40px;
+      padding: 0 20px;
+      box-sizing: border-box;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #171717;
+    }
+
+    @media (max-width: 640px) {
+      .cs-specialists-section {
+        margin: 44px auto 28px;
+        padding: 0 16px;
+      }
+    }
+
+    /* Шапка секции */
+    .cs-header-wrap {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 40px;
+    }
+
+    @media (max-width: 640px) {
+      .cs-header-wrap {
+        margin-bottom: 28px;
+      }
+    }
+
+    .cs-section-title {
+      font-family: '1-4Gilroy/5Forum', 'Forum', Georgia, Arial, sans-serif;
+      font-size: 34px;
+      line-height: 1.2;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #000000;
+      margin: 0 0 14px 0;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 959px) {
+      .cs-section-title {
+        font-size: 30px;
+      }
+    }
+
+    @media (max-width: 639px) {
+      .cs-section-title {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+    }
+
+    .cs-section-subtitle {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #666666;
+      margin: 0;
+    }
+
+    /* Адаптивная центрированная сетка карточек */
+    .cs-doctors-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 640px) {
+      .cs-doctors-grid {
+        gap: 20px;
+      }
+    }
+
+    /* Карточка доктора */
+    .cs-doctor-card {
+      width: calc(33.333% - 19px);
+      min-width: 280px;
+      max-width: 360px;
+      background: #ffffff;
+      border: 1px solid #e2e2e2;
+      border-radius: 0px !important;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-sizing: border-box;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    @media (max-width: 980px) {
+      .cs-doctor-card {
+        width: calc(50% - 14px);
+        max-width: 380px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .cs-doctor-card {
+        width: 100%;
+        max-width: 420px;
+      }
+    }
+
+    .cs-doctor-card:hover {
+      border-color: #171717;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    }
+
+    /* Фотография доктора (портретная ориентация) */
+    .cs-photo-wrap {
+      width: 100%;
+      aspect-ratio: 4 / 4.7;
+      position: relative;
+      overflow: hidden;
+      background-color: #f6f6f6;
+      border-radius: 0px !important;
+    }
+
+    .cs-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      border-radius: 0px !important;
+      transition: transform 0.35s ease;
+    }
+
+    .cs-doctor-card:hover .cs-photo {
+      transform: scale(1.03);
+    }
+
+    /* Информационная часть карточки */
+    .cs-info-wrap {
+      padding: 24px 22px 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      text-align: center;
+      align-items: center;
+    }
+
+    /* Бейдж ПроДокторов */
+    .cs-pd-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fafafa;
+      border: 1px solid #e8e8e8;
+      border-radius: 0px !important;
+      color: #333333;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 5px 11px;
+      margin-bottom: 14px;
+    }
+
+    .cs-pd-badge svg {
+      color: #1A5DD0;
+      flex-shrink: 0;
+    }
+
+    /* ФИО специалиста */
+    .cs-doctor-name {
+      font-family: '1-4Gilroy/5Forum', 'Forum', Georgia, Arial, serif;
+      font-size: 21px;
+      line-height: 1.25;
+      font-weight: 600;
+      color: #171717;
+      margin: 0 0 10px 0;
+      letter-spacing: 0.01em;
+    }
+
+    /* Специальность и должность */
+    .cs-doctor-role {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #666666;
+      margin: 0 0 22px 0;
+      flex-grow: 1;
+    }
+
+    /* Кнопка отзыва на ПроДокторов */
+    .cs-btn-review {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      box-sizing: border-box;
+      background: #171717;
+      color: #ffffff !important;
+      text-decoration: none !important;
+      padding: 14px 18px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 0px !important;
+      border: 1px solid #171717;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .cs-btn-review:hover {
+      background: #ffffff;
+      color: #171717 !important;
+    }
+
+    .cs-btn-review svg {
+      transition: transform 0.2s ease;
+    }
+
+    .cs-btn-review:hover svg {
+      transform: translate(2px, -2px);
+    }
+  </style>
+
+  <!-- ШАПКА РАЗДЕЛА -->
+  <div class="cs-header-wrap">
+    <h2 class="cs-section-title">ОТЗЫВЫ О НАШИХ СПЕЦИАЛИСТАХ</h2>
+    <p class="cs-section-subtitle">
+      Честные отзывы пациентов на портале ПроДокторов
+    </p>
+  </div>
+
+  <!-- СЕТКА КАРТОЧЕК ВРАЧЕЙ -->
+  <div class="cs-doctors-grid">
+
+    <!-- 1. ВАЙКИНА ВЛАДЛЕНА ВАЛЕРЬЕВНА -->
+    <div class="cs-doctor-card">
+      <div class="cs-photo-wrap">
+        <img class="cs-photo" src="https://static.tildacdn.com/tild3834-6262-4636-b739-323364623262/_11.jpg" alt="Вайкина Владлена Валерьевна" loading="lazy">
+      </div>
+      <div class="cs-info-wrap">
+        <div class="cs-pd-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+          <span>ПроДокторов • Отзывы</span>
+        </div>
+        <h3 class="cs-doctor-name">Вайкина Владлена Валерьевна</h3>
+        <p class="cs-doctor-role">Главный врач, врач-косметолог, дерматовенеролог, трихолог</p>
+        <a href="https://prodoctorov.ru/nnovgorod/vrach/1099654-vaykina/" target="_blank" rel="noopener noreferrer" class="cs-btn-review">
+          <span>Написать отзыв на ПроДокторов</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. ЖУКОВА ТАТЬЯНА СЕРГЕЕВНА -->
+    <div class="cs-doctor-card">
+      <div class="cs-photo-wrap">
+        <img class="cs-photo" src="https://static.tildacdn.com/tild6133-3632-4665-b731-383562373034/_1.jpg" alt="Жукова Татьяна Сергеевна" loading="lazy">
+      </div>
+      <div class="cs-info-wrap">
+        <div class="cs-pd-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+          <span>ПроДокторов • Отзывы</span>
+        </div>
+        <h3 class="cs-doctor-name">Жукова Татьяна Сергеевна</h3>
+        <p class="cs-doctor-role">Врач-дерматовенеролог, косметолог</p>
+        <a href="https://prodoctorov.ru/nnovgorod/vrach/1267146-zhukova/" target="_blank" rel="noopener noreferrer" class="cs-btn-review">
+          <span>Написать отзыв на ПроДокторов</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- 3. ГРАЩЕНКОВА АЛЕКСАНДРА СЕРГЕЕВНА -->
+    <div class="cs-doctor-card">
+      <div class="cs-photo-wrap">
+        <img class="cs-photo" src="https://static.tildacdn.com/tild6666-3230-4264-a462-346232633833/_.jpg" alt="Гращенкова Александра Сергеевна" loading="lazy">
+      </div>
+      <div class="cs-info-wrap">
+        <div class="cs-pd-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+          <span>ПроДокторов • Отзывы</span>
+        </div>
+        <h3 class="cs-doctor-name">Гращенкова Александра Сергеевна</h3>
+        <p class="cs-doctor-role">Врач-дерматовенеролог, косметолог</p>
+        <a href="https://prodoctorov.ru/nnovgorod/vrach/1335883-grashenkova/" target="_blank" rel="noopener noreferrer" class="cs-btn-review">
+          <span>Написать отзыв на ПроДокторов</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- 4. ДОБРЯЕВА ТАТЬЯНА ВАЛЕРЬЕВНА -->
+    <div class="cs-doctor-card">
+      <div class="cs-photo-wrap">
+        <img class="cs-photo" src="https://prodoctorov.ru/media/photo/nnovgorod/doctorimage/847870/2420144-847870-dobryaeva_square.jpg?t=1789649232" alt="Добряева Татьяна Валерьевна" loading="lazy">
+      </div>
+      <div class="cs-info-wrap">
+        <div class="cs-pd-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+          <span>ПроДокторов • Отзывы</span>
+        </div>
+        <h3 class="cs-doctor-name">Добряева Татьяна Валерьевна</h3>
+        <p class="cs-doctor-role">Врач-дерматолог, косметолог</p>
+        <a href="https://prodoctorov.ru/nnovgorod/vrach/847870-dobryaeva/" target="_blank" rel="noopener noreferrer" class="cs-btn-review">
+          <span>Написать отзыв на ПроДокторов</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- 5. КУТИНА ЕКАТЕРИНА АЛЕКСАНДРОВНА -->
+    <div class="cs-doctor-card">
+      <div class="cs-photo-wrap">
+        <img class="cs-photo" src="https://static.tildacdn.com/tild6430-6134-4465-a531-383638623863/_14.jpg" alt="Кутина Екатерина Александровна" loading="lazy">
+      </div>
+      <div class="cs-info-wrap">
+        <div class="cs-pd-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+          <span>ПроДокторов • Отзывы</span>
+        </div>
+        <h3 class="cs-doctor-name">Кутина Екатерина Александровна</h3>
+        <p class="cs-doctor-role">Генеральный директор, врач-дерматолог</p>
+        <a href="https://prodoctorov.ru/nnovgorod/vrach/1036591-kutina/" target="_blank" rel="noopener noreferrer" class="cs-btn-review">
+          <span>Написать отзыв на ПроДокторов</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>

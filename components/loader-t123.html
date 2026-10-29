@@ -1,0 +1,21 @@
+<!-- ========================================================
+     КЛИНИКА «КАТРИН» — ДИНАМИЧЕСКИЙ БЛОК АКЦИЙ (ZERO-TILDA)
+     Данный блок размещается в T123 один раз.
+     Все акции подгружаются автоматически из CDN репозитория.
+     ======================================================== -->
+<div id="catherine-promos-container"></div>
+<script>
+  (function() {
+    var s = document.createElement('script');
+    s.async = true;
+    var v = new Date().toISOString().slice(0, 13).replace(/[-T]/g, '');
+    s.src = 'https://cdn.jsdelivr.net/gh/myaumyaso2/catherine-salon-promos@main/dist/promos.min.js?v=' + v;
+    s.onerror = function() {
+      var f = document.createElement('script');
+      f.async = true;
+      f.src = 'https://myaumyaso2.github.io/catherine-salon-promos/dist/promos.min.js?v=' + v;
+      document.head.appendChild(f);
+    };
+    document.head.appendChild(s);
+  })();
+</script>

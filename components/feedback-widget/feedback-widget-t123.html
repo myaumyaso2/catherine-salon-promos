@@ -1,0 +1,738 @@
+<!-- ========================================================
+     ВИДЖЕТ ОЦЕНКИ ВИЗИТА (КЛИНИКА «КАТРИН», catherine-salon.ru)
+     Страница: https://catherine-salon.ru/reviews
+     Заголовок H1 и Хлебные крошки: в едином стиле с https://catherine-salon.ru/o_nas
+     Стиль: Строгая геометрия, прямые углы, без скруглений (border-radius: 0)
+     Получатели писем: katrin.klinik@mail.ru и salon.catherinenn@yandex.ru
+     Для вставки в блок T123 («HTML-код») на Tilda
+     ======================================================== -->
+
+<div id="catherine-feedback-widget-wrapper">
+  <style>
+    /* Скрываем старый блок заголовка Tilda rec858043104, если он остался на странице */
+    #rec858043104 {
+      display: none !important;
+    }
+
+    /* Заголовок H1 и Хлебные крошки (точь-в-точь как на https://catherine-salon.ru/o_nas) */
+    .cf-header-section {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    @media (max-width: 640px) {
+      .cf-header-section {
+        padding: 0 16px;
+        margin-bottom: 28px;
+      }
+    }
+
+    .cf-main-h1 {
+      font-family: '1-4Gilroy/5Forum', 'Forum', Georgia, Arial, sans-serif;
+      font-size: 40px;
+      line-height: 1.1;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #000000;
+      margin: 0 0 12px 0;
+      letter-spacing: normal;
+    }
+
+    @media (max-width: 959px) {
+      .cf-main-h1 {
+        font-size: 34px;
+      }
+    }
+
+    @media (max-width: 639px) {
+      .cf-main-h1 {
+        font-size: 26px;
+      }
+    }
+
+    @media (max-width: 479px) {
+      .cf-main-h1 {
+        font-size: 32px;
+        line-height: 1.15;
+      }
+    }
+
+    /* Хлебные крошки */
+    .cf-breadcrumbs {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      font-family: '1-4Gilroy/5Forum', 'Montserrat', Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.5;
+      color: #171717;
+    }
+
+    .cf-breadcrumbs a {
+      color: #171717;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .cf-breadcrumbs a:hover {
+      opacity: 0.7;
+      text-decoration: underline;
+    }
+
+    .cf-breadcrumbs .cf-bc-sep {
+      margin: 0 10px;
+      color: #000000;
+      font-weight: 300;
+      user-select: none;
+    }
+
+    .cf-breadcrumbs .cf-bc-current {
+      color: #171717;
+      font-weight: 300;
+    }
+
+    /* Строгий геометрический стиль карточки виджета клиники «Катрин» */
+    .cf-widget-root {
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      border-radius: 0px !important;
+      border: 1px solid #171717;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+      padding: 48px 40px;
+      margin: 0 auto;
+      max-width: 640px;
+      box-sizing: border-box;
+      color: #171717;
+      position: relative;
+    }
+
+    @media (max-width: 640px) {
+      .cf-widget-root {
+        padding: 32px 18px;
+        border-left: none;
+        border-right: none;
+      }
+    }
+
+    .cf-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #888888;
+      margin-bottom: 14px;
+    }
+
+    .cf-card-title {
+      font-family: 'Forum', Georgia, 'Times New Roman', serif;
+      font-size: 32px;
+      line-height: 1.25;
+      font-weight: 400;
+      color: #171717;
+      letter-spacing: 0.03em;
+      margin-bottom: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .cf-card-title {
+        font-size: 25px;
+      }
+    }
+
+    .cf-subtitle {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #555555;
+      margin-bottom: 30px;
+    }
+
+    /* Рейтинг звёзд */
+    .cf-rating-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 32px 0 20px;
+    }
+
+    .cf-stars-wrapper {
+      display: inline-flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .cf-stars-wrapper input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 1px;
+      height: 1px;
+      pointer-events: none;
+    }
+
+    .cf-star-label {
+      cursor: pointer;
+      padding: 6px;
+      transition: transform 0.15s ease;
+      touch-action: manipulation;
+    }
+
+    .cf-star-label:hover {
+      transform: scale(1.15);
+    }
+
+    .cf-star-icon {
+      width: 44px;
+      height: 44px;
+      fill: #e6e6e6;
+      transition: fill 0.2s ease, filter 0.2s ease;
+    }
+
+    @media (max-width: 480px) {
+      .cf-star-icon {
+        width: 38px;
+        height: 38px;
+      }
+      .cf-stars-wrapper {
+        gap: 8px;
+      }
+    }
+
+    .cf-stars-wrapper input:checked ~ label .cf-star-icon,
+    .cf-stars-wrapper label:hover ~ label .cf-star-icon,
+    .cf-stars-wrapper label:hover .cf-star-icon {
+      fill: #171717;
+      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
+    }
+
+    .cf-rating-score {
+      margin-top: 16px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888888;
+      min-height: 20px;
+    }
+
+    /* Экраны сценариев */
+    .cf-step {
+      display: none;
+      animation: cfFadeIn 0.3s ease forwards;
+    }
+
+    .cf-step.cf-active {
+      display: block;
+    }
+
+    @keyframes cfFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Экран 5 звезд */
+    .cf-success-screen {
+      text-align: center;
+      padding: 8px 0;
+    }
+
+    .cf-subtitle-positive {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333333;
+      max-width: 520px;
+      margin: 0 auto 22px;
+    }
+
+    @media (max-width: 640px) {
+      .cf-subtitle-positive {
+        font-size: 15px;
+      }
+    }
+
+    .cf-buttons-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      margin-top: 6px;
+    }
+
+    .cf-yandex-badge-wrap {
+      margin: 24px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 52px;
+    }
+
+    /* Прямоугольные рубленые кнопки */
+    .cf-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #171717;
+      color: #ffffff !important;
+      padding: 16px 32px;
+      border-radius: 0px !important;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: none;
+      border: 1px solid #171717;
+      cursor: pointer;
+      width: 100%;
+      max-width: 380px;
+      box-sizing: border-box;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .cf-btn-primary:hover {
+      background: #ffffff;
+      color: #171717 !important;
+    }
+
+    .cf-btn-secondary {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888888;
+      text-decoration: underline;
+      cursor: pointer;
+      background: none;
+      border: none;
+      border-radius: 0px !important;
+      transition: color 0.2s;
+    }
+
+    .cf-btn-secondary:hover {
+      color: #171717;
+    }
+
+    /* Экран формы (4 звезды и 1-3 звезды) */
+    .cf-complaint-screen {
+      text-align: left;
+    }
+
+    .cf-alert-box {
+      background: #fafafa;
+      border-radius: 0px !important;
+      border: 1px solid #e0e0e0;
+      border-left: 4px solid #171717;
+      padding: 20px 22px;
+      margin-bottom: 28px;
+    }
+
+    .cf-alert-box p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #222222;
+      margin-bottom: 8px;
+    }
+
+    .cf-alert-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .cf-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 560px) {
+      .cf-form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cf-form-group {
+      margin-bottom: 16px;
+    }
+
+    .cf-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #333333;
+      margin-bottom: 8px;
+    }
+
+    /* Рубленые поля ввода с прямыми углами */
+    .cf-input, .cf-textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px 16px;
+      border-radius: 0px !important;
+      border: 1px solid #171717;
+      font-size: 14px;
+      font-family: inherit;
+      color: #171717;
+      background: #ffffff;
+      transition: background-color 0.2s;
+    }
+
+    .cf-input:focus, .cf-textarea:focus {
+      outline: none;
+      background: #fbfbfb;
+      border-color: #000000;
+    }
+
+    .cf-textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .cf-checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 12px;
+      color: #666666;
+      line-height: 1.5;
+      margin: 18px 0 26px;
+      cursor: pointer;
+    }
+
+    .cf-checkbox-label input {
+      margin-top: 2px;
+      cursor: pointer;
+      border-radius: 0px !important;
+      accent-color: #171717;
+    }
+
+    .cf-checkbox-label a {
+      color: #171717;
+      text-decoration: underline;
+    }
+
+    /* Рубленый бейдж оценки */
+    .cf-rating-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #171717;
+      color: #ffffff;
+      border-radius: 0px !important;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .cf-tilda-fallback-msg {
+      display: none;
+      background: #f4f4f4;
+      border: 1px solid #171717;
+      border-radius: 0px !important;
+      color: #171717;
+      padding: 18px;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 18px;
+      line-height: 1.5;
+    }
+  </style>
+
+  <!-- ХЛЕБНЫЕ КРОШКИ И ЗАГОЛОВОК СТРАНИЦЫ (КАК НА https://catherine-salon.ru/o_nas) -->
+  <div class="cf-header-section">
+    <h1 class="cf-main-h1">ОТЗЫВЫ О КЛИНИКЕ КАТРИН</h1>
+    <nav class="cf-breadcrumbs" aria-label="Хлебные крошки">
+      <a href="https://catherine-salon.ru/">Главная</a>
+      <span class="cf-bc-sep">/</span>
+      <span class="cf-bc-current">Отзывы</span>
+    </nav>
+  </div>
+
+  <!-- КАРТОЧКА ВИДЖЕТА ОЦЕНКИ ВИЗИТА -->
+  <div id="catherine-feedback-widget" class="cf-widget-root">
+
+    <!-- ШАГ 1: ВЫБОР ОЦЕНКИ -->
+    <div id="cf-step-rating" class="cf-step cf-active">
+      <div style="text-align: center;">
+        <span class="cf-badge">Контроль качества</span>
+        <h2 class="cf-card-title">Оцените ваш визит в клинику Катрин</h2>
+        <p class="cf-subtitle">Ваше мнение действительно важно для нас. Мы непрерывно совершенствуем наш сервис и заботимся о вашем комфорте.</p>
+
+        <div class="cf-rating-group">
+          <div class="cf-stars-wrapper" id="cf-stars">
+            <input type="radio" name="cf_stars_val" id="cf_s5" value="5">
+            <label for="cf_s5" class="cf-star-label" title="5 звезд — Отлично">
+              <svg class="cf-star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </label>
+
+            <input type="radio" name="cf_stars_val" id="cf_s4" value="4">
+            <label for="cf_s4" class="cf-star-label" title="4 звезды — Хорошо">
+              <svg class="cf-star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </label>
+
+            <input type="radio" name="cf_stars_val" id="cf_s3" value="3">
+            <label for="cf_s3" class="cf-star-label" title="3 звезды — Нормально">
+              <svg class="cf-star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </label>
+
+            <input type="radio" name="cf_stars_val" id="cf_s2" value="2">
+            <label for="cf_s2" class="cf-star-label" title="2 звезды — Плохо">
+              <svg class="cf-star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </label>
+
+            <input type="radio" name="cf_stars_val" id="cf_s1" value="1">
+            <label for="cf_s1" class="cf-star-label" title="1 звезда — Ужасно">
+              <svg class="cf-star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </label>
+          </div>
+          <div class="cf-rating-score" id="cf-score-label">Нажмите на звезду, чтобы оценить</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ШАГ 2: СЦЕНАРИЙ 5 ЗВЕЗД (ДОВОЛЬНЫЙ КЛИЕНТ) -->
+    <div id="cf-step-positive" class="cf-step cf-success-screen">
+      <span class="cf-badge">Благодарим за визит!</span>
+      <h2 class="cf-card-title">Спасибо за высокую оценку!</h2>
+      <p class="cf-subtitle-positive">
+        Мы очень рады, что визит в клинику «Катрин» оставил у вас приятные впечатления. Пожалуйста, поделитесь вашим отзывом на удобной для вас площадке — это очень поможет нашей команде и новым пациентам!
+      </p>
+
+      <!-- Официальный бейдж Яндекс Карт -->
+      <div class="cf-yandex-badge-wrap">
+        <iframe src="https://yandex.ru/sprav/widget/rating-badge/1097598616?type=rating" width="150" height="50" frameborder="0"></iframe>
+      </div>
+
+      <div class="cf-buttons-stack">
+        <a href="https://yandex.ru/maps/org/1097598616/reviews/" target="_blank" rel="noopener noreferrer" class="cf-btn-primary">
+          <span>Написать отзыв на Яндекс Картах</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+
+        <a href="https://prodoctorov.ru/nnovgorod/lpu/93473-katrin/" target="_blank" rel="noopener noreferrer" class="cf-btn-primary">
+          <span>Написать отзыв на ПроДокторов</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ШАГ 3: СЦЕНАРИЙ ДИНАМИЧЕСКОЙ ФОРМЫ (4 ЗВЕЗДЫ VS 1-3 ЗВЕЗДЫ) -->
+    <div id="cf-step-form" class="cf-step cf-complaint-screen">
+      <div class="cf-rating-badge-pill" id="cf-chosen-stars-badge">
+        <span>★</span> <span id="cf-stars-count-text">Оценка: 4/5</span>
+      </div>
+
+      <h2 class="cf-card-title" id="cf-form-title">Спасибо за хорошую оценку!</h2>
+      
+      <div class="cf-alert-box" id="cf-form-alert-box">
+        <p><strong id="cf-alert-headline">Мы стремимся к совершенству.</strong></p>
+        <p id="cf-alert-body">Подскажите, пожалуйста, чего нам не хватило до твердой пятерки? Будем рады вашим пожеланиям.</p>
+      </div>
+
+      <form id="cf-feedback-form" onsubmit="cfSubmitFeedback(event)">
+        <input type="hidden" name="rating_score" id="cf-hidden-rating-val" value="">
+
+        <div class="cf-form-grid">
+          <div class="cf-form-group">
+            <label class="cf-label" for="cf-user-name">Ваше имя *</label>
+            <input type="text" id="cf-user-name" name="name" class="cf-input" placeholder="Как к вам обращаться" required>
+          </div>
+          <div class="cf-form-group">
+            <label class="cf-label" for="cf-user-phone">Телефон для связи *</label>
+            <input type="tel" id="cf-user-phone" name="phone" class="cf-input" placeholder="+7 (___) ___-__-__" required>
+          </div>
+        </div>
+
+        <div class="cf-form-grid">
+          <div class="cf-form-group">
+            <label class="cf-label" for="cf-service">Процедура или специалист</label>
+            <input type="text" id="cf-service" name="service" class="cf-input" placeholder="Например: Чистка лица или ФИО врача">
+          </div>
+          <div class="cf-form-group">
+            <label class="cf-label" for="cf-visit-date">Примерная дата визита</label>
+            <input type="text" id="cf-visit-date" name="visit_date" class="cf-input" placeholder="ДД.ММ.ГГГГ">
+          </div>
+        </div>
+
+        <div class="cf-form-group">
+          <label class="cf-label" for="cf-message" id="cf-message-label">Ваши предложения и пожелания *</label>
+          <textarea id="cf-message" name="message" class="cf-textarea" placeholder="Что мы могли бы улучшить, чтобы ваш следующий визит был безупречным?..." required></textarea>
+        </div>
+
+        <label class="cf-checkbox-label">
+          <input type="checkbox" required checked>
+          <span>Согласен на обработку персональных данных в соответствии с <a href="https://catherine-salon.ru/privacy" target="_blank">политикой конфиденциальности</a></span>
+        </label>
+
+        <button type="submit" id="cf-submit-btn" class="cf-btn-primary" style="max-width: 100%;">
+          <span id="cf-submit-btn-text">Отправить пожелания</span>
+        </button>
+
+        <div id="cf-success-feedback" class="cf-tilda-fallback-msg">
+          ✓ Ваше сообщение успешно отправлено руководству клиники «Катрин». Спасибо за участие!
+        </div>
+
+        <div style="text-align: center; margin-top: 18px;">
+          <button type="button" class="cf-btn-secondary" onclick="cfResetRating()">Изменить оценку</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <script>
+    // JS Логика виджета контроля качества «Катрин»
+    (function() {
+      let cfSelectedRating = null;
+
+      const cfStepRating = document.getElementById('cf-step-rating');
+      const cfStepPositive = document.getElementById('cf-step-positive');
+      const cfStepForm = document.getElementById('cf-step-form');
+      const cfScoreLabel = document.getElementById('cf-score-label');
+      const cfHiddenRating = document.getElementById('cf-hidden-rating-val');
+      const cfStarsBadgeText = document.getElementById('cf-stars-count-text');
+
+      // Динамические элементы текста под 4 звезды и 1-3 звезды
+      const cfFormTitle = document.getElementById('cf-form-title');
+      const cfAlertHeadline = document.getElementById('cf-alert-headline');
+      const cfAlertBody = document.getElementById('cf-alert-body');
+      const cfMessageLabel = document.getElementById('cf-message-label');
+      const cfMessageTextarea = document.getElementById('cf-message');
+      const cfSubmitBtnText = document.getElementById('cf-submit-btn-text');
+      const cfSuccessFeedback = document.getElementById('cf-success-feedback');
+
+      // Обработка клика по звездам
+      document.querySelectorAll('.cf-stars-wrapper input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+          cfSelectedRating = parseInt(this.value, 10);
+          if (cfHiddenRating) cfHiddenRating.value = cfSelectedRating;
+
+          // Синхронизация со штатной формой Tilda (для отправки на katrin.klinik@mail.ru и salon.catherinenn@yandex.ru)
+          const tildaRateInput = document.querySelector('.t-form [name="rating"], .t-form [name="rate"], .t-form [name="ocenka"]');
+          if (tildaRateInput) {
+            tildaRateInput.value = cfSelectedRating + ' из 5';
+          }
+
+          // Переключение экранов
+          cfStepRating.classList.remove('cf-active');
+
+          if (cfSelectedRating === 5) {
+            // 5 ЗВЕЗД: Экран благодарности + Яндекс Карты
+            cfStepPositive.classList.add('cf-active');
+            cfStepForm.classList.remove('cf-active');
+          } else if (cfSelectedRating === 4) {
+            // 4 ЗВЕЗДЫ: Нейтрально-доброжелательный тон
+            cfStarsBadgeText.textContent = 'Ваша оценка: 4 из 5';
+            cfFormTitle.textContent = 'Спасибо за хорошую оценку!';
+            cfAlertHeadline.textContent = 'Мы стремимся к совершенству.';
+            cfAlertBody.innerHTML = 'Подскажите, пожалуйста, чего нам не хватило до твердой пятерки? Будем рады вашим пожеланиям.';
+            cfMessageLabel.textContent = 'Ваши пожелания и предложения *';
+            cfMessageTextarea.placeholder = 'Что мы могли бы улучшить, чтобы ваш следующий визит был безупречным?...';
+            cfSubmitBtnText.textContent = 'Отправить пожелания';
+            cfSuccessFeedback.textContent = '✓ Спасибо за ваши пожелания! Мы обязательно учтем их, чтобы стать еще лучше.';
+
+            cfStepForm.classList.add('cf-active');
+            cfStepPositive.classList.remove('cf-active');
+
+            const tildaTargetBlock = document.querySelector('.cf-tilda-form, #rec-complaint-form');
+            if (tildaTargetBlock) {
+              tildaTargetBlock.style.display = 'block';
+              tildaTargetBlock.scrollIntoView({ behavior: 'smooth' });
+            }
+          } else {
+            // 1-3 ЗВЕЗДЫ: Сочувственный тон перехвата претензии
+            cfStarsBadgeText.textContent = 'Ваша оценка: ' + cfSelectedRating + ' из 5';
+            cfFormTitle.textContent = 'Благодарим за честную обратную связь!';
+            cfAlertHeadline.textContent = 'Пожалуйста, опишите ситуацию, которая вас огорчила.';
+            cfAlertBody.innerHTML = 'Мы внимательно изучим ваше обращение, примем все необходимые меры для устранения недостатков и обязательно сообщим вам о результате.<br><span style="color: #666; font-size: 13px; display: inline-block; margin-top: 6px;">Ниже вы можете оставить развернутый комментарий о вашем визите — он поступит напрямую руководству клиники.</span>';
+            cfMessageLabel.textContent = 'Подробное описание ситуации *';
+            cfMessageTextarea.placeholder = 'Расскажите, что именно пошло не так, чтобы мы могли разобраться и исправить это...';
+            cfSubmitBtnText.textContent = 'Отправить обращение руководству';
+            cfSuccessFeedback.textContent = '✓ Ваше обращение успешно отправлено руководству клиники «Катрин». Мы свяжемся с вами в ближайшее время!';
+
+            cfStepForm.classList.add('cf-active');
+            cfStepPositive.classList.remove('cf-active');
+
+            const tildaTargetBlock = document.querySelector('.cf-tilda-form, #rec-complaint-form');
+            if (tildaTargetBlock) {
+              tildaTargetBlock.style.display = 'block';
+              tildaTargetBlock.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
+
+      // Сброс оценки
+      window.cfResetRating = function() {
+        cfStepPositive.classList.remove('cf-active');
+        cfStepForm.classList.remove('cf-active');
+        cfStepRating.classList.add('cf-active');
+        document.querySelectorAll('.cf-stars-wrapper input[type="radio"]').forEach(r => r.checked = false);
+        cfScoreLabel.textContent = 'Нажмите на звезду, чтобы оценить';
+      };
+
+      // Простая маска для телефона
+      const phoneInput = document.getElementById('cf-user-phone');
+      if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+          let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+          if (!x[2]) {
+            e.target.value = x[1] ? '+7 (' + x[1] : '';
+          } else {
+            e.target.value = !x[3] ? '+7 (' + x[2] : '+7 (' + x[2] + ') ' + x[3] + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+          }
+        });
+      }
+
+      // Отправка формы (4 звезды или 1-3 звезды)
+      window.cfSubmitFeedback = function(e) {
+        e.preventDefault();
+        const form = document.getElementById('cf-feedback-form');
+        const submitBtn = document.getElementById('cf-submit-btn');
+        const successMsg = document.getElementById('cf-success-feedback');
+
+        // Передача данных в скрытую штатную форму Tilda (если подключена для отправки писем)
+        const tildaForm = document.querySelector('.cf-tilda-form form, #rec-complaint-form form');
+        if (tildaForm) {
+          const tName = tildaForm.querySelector('[name="Name"], [name="name"]');
+          const tPhone = tildaForm.querySelector('[name="Phone"], [name="phone"]');
+          const tComment = tildaForm.querySelector('[name="Comment"], [name="message"], [name="Text"]');
+          if (tName) tName.value = form.name.value;
+          if (tPhone) tPhone.value = form.phone.value;
+          if (tComment) tComment.value = `[Оценка: ${cfSelectedRating}/5 | Процедура/Врач: ${form.service.value} | Дата: ${form.visit_date.value}] \n${form.message.value}`;
+          
+          const tSubmit = tildaForm.querySelector('button[type="submit"], input[type="submit"]');
+          if (tSubmit) {
+            tSubmit.click();
+          }
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Отправка...</span>';
+
+        setTimeout(() => {
+          submitBtn.style.display = 'none';
+          successMsg.style.display = 'block';
+        }, 800);
+      };
+    })();
+  </script>
+</div>

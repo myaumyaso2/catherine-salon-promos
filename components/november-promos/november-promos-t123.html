@@ -1,0 +1,1138 @@
+<!-- ========================================================
+     БЛОК «СПЕЦИАЛЬНЫЕ ПРЕДЛОЖЕНИЯ НОЯБРЯ 2026»
+     Клиника врачебной и эстетической косметологии «Катрин»
+     Сайт: https://catherine-salon.ru/
+     Версия: 2.0 (Ноябрь 2026)
+     Автономный модуль для вставки в блок T123 (HTML-код)
+     ======================================================== -->
+
+<div id="cs-october-promos-root" class="cs-oct-scope">
+  <style>
+    /* Базовые переменные стиля Catherine Clinic */
+    .cs-oct-scope {
+      --cs-bg-light: #ffffff;
+      --cs-bg-card: #fcfcfc;
+      --cs-bg-dark: #171717;
+      --cs-text-primary: #171717;
+      --cs-text-muted: #555555;
+      --cs-text-light: #f7f7f7;
+      --cs-accent-gold: #c5a265;
+      --cs-accent-gold-hover: #b08d51;
+      --cs-border-color: #e5e5e5;
+      --cs-border-dark: #2a2a2a;
+      --cs-font-title: "Forum", Georgia, "Times New Roman", serif;
+      --cs-font-body: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --cs-radius: 0px; /* Строгая премиальная геометрия клиники */
+      
+      font-family: var(--cs-font-body);
+      color: var(--cs-text-primary);
+      box-sizing: border-box;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .cs-oct-scope *,
+    .cs-oct-scope *::before,
+    .cs-oct-scope *::after {
+      box-sizing: border-box;
+    }
+
+    /* Внешний контейнер */
+    #cs-october-promos-root {
+      width: 100%;
+      max-width: 1200px;
+      margin: 40px auto 70px auto;
+      padding: 0 20px;
+    }
+
+    /* Шапка секции */
+    .cs-oct-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cs-oct-subtitle {
+      font-family: var(--cs-font-body);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #777777;
+      margin-bottom: 12px;
+    }
+
+    .cs-oct-title {
+      font-family: var(--cs-font-title);
+      font-size: 38px;
+      line-height: 1.2;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--cs-text-primary);
+      margin: 0 0 16px 0;
+    }
+
+    .cs-oct-intro {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--cs-text-muted);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* ========================================================
+       ГЛАВНЫЙ HERO-БАННЕР МЕСЯЦА (MORPHEUS 8 — SPLIT LAYOUT)
+       ======================================================== */
+    .cs-oct-flash-banner {
+      background: var(--cs-bg-dark);
+      color: #ffffff;
+      border: 1px solid var(--cs-border-dark);
+      margin-bottom: 36px;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cs-oct-flash-content {
+      padding: 40px 44px;
+    }
+
+    .cs-oct-flash-tagline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cs-oct-badge-flash {
+      background: var(--cs-accent-gold);
+      color: #171717;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 5px 12px;
+    }
+
+    .cs-oct-flash-date {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+    }
+
+    .cs-oct-flash-title {
+      font-family: var(--cs-font-title);
+      font-size: 30px;
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 0 0 14px 0;
+      color: #ffffff;
+    }
+
+    .cs-oct-flash-offer {
+      font-size: 18px;
+      font-weight: 600;
+      color: #f0f0f0;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    .cs-oct-flash-offer mark {
+      background: transparent;
+      color: var(--cs-accent-gold);
+      font-weight: 700;
+    }
+
+    .cs-oct-flash-text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #cccccc;
+      margin: 0 0 20px 0;
+      max-width: 640px;
+    }
+
+    .cs-oct-flash-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-top: 14px;
+      margin-bottom: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .cs-oct-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #e0e0e0;
+    }
+
+    .cs-oct-feature-bullet {
+      width: 5px;
+      height: 5px;
+      background: var(--cs-accent-gold);
+      display: inline-block;
+    }
+
+    .cs-oct-flash-actions-inline {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cs-oct-flash-media {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      overflow: hidden;
+      position: relative;
+      border-left: 1px solid rgba(255, 255, 255, 0.12);
+      background: #111111;
+    }
+
+    .cs-oct-flash-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .cs-oct-flash-banner:hover .cs-oct-flash-img {
+      transform: scale(1.02);
+    }
+
+    /* Кнопки */
+    .cs-btn-primary-gold {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      color: #171717;
+      padding: 14px 26px;
+      font-family: var(--cs-font-body);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid #ffffff;
+      transition: all 0.2s ease;
+    }
+
+    .cs-btn-primary-gold:hover {
+      background: var(--cs-accent-gold);
+      border-color: var(--cs-accent-gold);
+      color: #171717;
+    }
+
+    .cs-btn-link-white {
+      background: transparent;
+      border: none;
+      color: #cccccc;
+      font-family: var(--cs-font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      padding: 8px 0;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: color 0.2s;
+    }
+
+    .cs-btn-link-white:hover {
+      color: #ffffff;
+    }
+
+    /* ========================================================
+       СЕТКА ИЗ 3 КАРТОЧЕК ПРЕДЛОЖЕНИЙ (3 КОЛОНКИ НА ДЕСКТОПЕ)
+       ======================================================== */
+    .cs-oct-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .cs-oct-card {
+      background: var(--cs-bg-card);
+      border: 1px solid var(--cs-border-color);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: box-shadow 0.25s ease, border-color 0.25s ease;
+      overflow: hidden;
+    }
+
+    .cs-oct-card:hover {
+      border-color: #bbbbbb;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .cs-card-media {
+      width: 100%;
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
+
+    .cs-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .cs-oct-card:hover .cs-card-img {
+      transform: scale(1.03);
+    }
+
+    .cs-card-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(23, 23, 23, 0.88);
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      backdrop-filter: blur(4px);
+    }
+
+    .cs-card-body {
+      padding: 24px 22px 26px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .cs-card-title {
+      font-family: var(--cs-font-title);
+      font-size: 23px;
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin: 0 0 10px 0;
+      color: var(--cs-text-primary);
+    }
+
+    .cs-card-aim {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #666666;
+      margin-bottom: 16px;
+      min-height: 38px;
+    }
+
+    .cs-card-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 14px;
+    }
+
+    .cs-card-list li {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #444444;
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .cs-card-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 4px;
+      height: 4px;
+      background: var(--cs-accent-gold);
+    }
+
+    .cs-card-value-box {
+      background: #f7f7f7;
+      border-left: 3px solid var(--cs-accent-gold);
+      padding: 12px 14px;
+      margin-bottom: 20px;
+    }
+
+    .cs-card-value-main {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--cs-text-primary);
+      margin-bottom: 4px;
+    }
+
+    .cs-card-value-sub {
+      font-size: 12px;
+      line-height: 1.45;
+      color: #666666;
+    }
+
+    .cs-card-limit-note {
+      font-size: 11px;
+      color: #888888;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cs-card-limit-dot {
+      width: 5px;
+      height: 5px;
+      background: #c5a265;
+      display: inline-block;
+    }
+
+    .cs-card-actions {
+      display: flex;
+      align-items: stretch;
+      gap: 10px;
+    }
+
+    .cs-btn-primary-black {
+      flex: 1 1 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--cs-text-primary);
+      color: #ffffff;
+      padding: 13px 14px;
+      font-family: var(--cs-font-body);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid var(--cs-text-primary);
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .cs-btn-primary-black:hover {
+      background: var(--cs-accent-gold);
+      border-color: var(--cs-accent-gold);
+      color: #171717;
+    }
+
+    .cs-btn-outline-details {
+      flex: 0 0 auto;
+      padding: 13px 14px;
+      background: transparent;
+      color: #555555;
+      font-family: var(--cs-font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid var(--cs-border-color);
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .cs-btn-outline-details:hover {
+      border-color: #171717;
+      color: #171717;
+    }
+
+    /* Дисклеймер */
+    .cs-oct-disclaimer {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid #eeeeee;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #888888;
+    }
+
+    /* ========================================================
+       ВНУТРЕННИЕ МОДАЛЬНЫЕ ОКНА УСЛОВИЙ (MODAL OVERLAY)
+       ======================================================== */
+    .cs-modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.72);
+      z-index: 99999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(3px);
+    }
+
+    .cs-modal-backdrop.is-active {
+      display: flex;
+    }
+
+    .cs-modal-dialog {
+      background: #ffffff;
+      width: 100%;
+      max-width: 620px;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 40px 36px;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+
+    .cs-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      color: #888888;
+      transition: color 0.2s;
+    }
+
+    .cs-modal-close:hover {
+      color: #171717;
+    }
+
+    .cs-modal-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .cs-modal-badge {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--cs-accent-gold);
+      margin-bottom: 6px;
+    }
+
+    .cs-modal-title {
+      font-family: var(--cs-font-title);
+      font-size: 26px;
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 0;
+      color: var(--cs-text-primary);
+    }
+
+    .cs-modal-body {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #444444;
+      margin-bottom: 28px;
+    }
+
+    .cs-modal-body h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 18px 0 8px 0;
+      color: #171717;
+    }
+
+    .cs-modal-body ul {
+      margin: 0 0 12px 0;
+      padding-left: 18px;
+    }
+
+    .cs-modal-body li {
+      margin-bottom: 6px;
+    }
+
+    .cs-modal-footer {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* Fallback форма записи */
+    .cs-fallback-form-group {
+      margin-bottom: 16px;
+    }
+    .cs-fallback-form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+      color: #555555;
+    }
+    .cs-fallback-form-group input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #cccccc;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .cs-fallback-form-group input:focus {
+      border-color: #171717;
+    }
+    .cs-fallback-form-group input[readonly] {
+      background: #f7f7f7;
+      border-color: #e5e5e5;
+      color: #171717;
+      font-weight: 600;
+    }
+
+    /* ========================================================
+       АДАПТИВНОСТЬ ПОД ЭКРАНЫ (320, 480, 640, 960, 1200 px)
+       ======================================================== */
+    @media (max-width: 959px) {
+      .cs-oct-cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .cs-oct-flash-banner {
+        grid-template-columns: 1fr;
+        padding: 30px 24px;
+        gap: 24px;
+      }
+      .cs-oct-flash-media {
+        order: -1;
+        min-height: 240px;
+        border-left: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+    }
+
+    @media (max-width: 639px) {
+      #cs-october-promos-root {
+        margin: 24px auto 44px;
+        padding: 0 14px;
+      }
+      .cs-oct-title {
+        font-size: 26px;
+      }
+      .cs-oct-flash-title {
+        font-size: 22px;
+      }
+      .cs-oct-flash-offer {
+        font-size: 16px;
+      }
+      .cs-card-title {
+        font-size: 21px;
+      }
+      .cs-card-body {
+        padding: 20px 18px 22px;
+      }
+      .cs-card-media {
+        height: 190px;
+      }
+      .cs-modal-dialog {
+        padding: 28px 20px;
+      }
+      .cs-card-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .cs-btn-outline-details {
+        text-align: center;
+      }
+    }
+  </style>
+
+  <!-- Шапка секции -->
+  <div class="cs-oct-header">
+    <div class="cs-oct-subtitle">Клиника врачебной и эстетической косметологии «Катрин»</div>
+    <h2 class="cs-oct-title">Специальные предложения ноября</h2>
+    <p class="cs-oct-intro">
+      Индивидуальные медицинские протоколы, глубокое аппаратное обновление кожи и персонализированные программы омоложения. Все процедуры проводятся врачами клиники по показаниям.
+    </p>
+  </div>
+
+  <!-- Главный Hero-баннер: Morpheus 8 (Лицо + шея + ФДТ в подарок) -->
+  <div class="cs-oct-flash-banner">
+    <div class="cs-oct-flash-content">
+      <div class="cs-oct-flash-tagline">
+        <span class="cs-oct-badge-flash">Сильная процедура месяца</span>
+        <span class="cs-oct-flash-date">01–30 ноября 2026 года</span>
+      </div>
+
+      <h3 class="cs-oct-flash-title">Morpheus 8 — глубокое обновление кожи</h3>
+
+      <div class="cs-oct-flash-offer">
+        Лицо + шея: <mark>55 000 ₽</mark> вместо 68 000 ₽ + <mark>ФДТ в подарок</mark> в тот же день
+      </div>
+
+      <p class="cs-oct-flash-text">
+        Микроигольчатое радиочастотное ремоделирование тканей лица и шеи для выраженного лифтинга, уплотнения кожи и сглаживания рельефа. После процедуры в тот же день проводится фотодинамическая терапия (ФДТ, 20 мин) стоимостью 3 000 ₽ в подарок.
+      </p>
+
+      <div class="cs-oct-flash-features">
+        <div class="cs-oct-feature-item">
+          <span class="cs-oct-feature-bullet"></span>
+          <span>Лицо + шея: 55 000 ₽ (вместо 68 000 ₽)</span>
+        </div>
+        <div class="cs-oct-feature-item">
+          <span class="cs-oct-feature-bullet"></span>
+          <span>ФДТ в подарок в тот же день</span>
+        </div>
+        <div class="cs-oct-feature-item">
+          <span class="cs-oct-feature-bullet"></span>
+          <span>Кэшбэк 3–7% на карту лояльности</span>
+        </div>
+        <div class="cs-oct-feature-item">
+          <span class="cs-oct-feature-bullet"></span>
+          <span>Ограниченная запись: 15 мест на ноябрь</span>
+        </div>
+      </div>
+
+      <div class="cs-oct-flash-actions-inline">
+        <a href="#popup:zayavka" class="cs-btn-primary-gold cs-promo-trigger" data-promo-name="Morpheus 8: Лицо + шея (55 000 ₽ + ФДТ в подарок)">
+          Записаться на Morpheus 8
+        </a>
+        <button type="button" class="cs-btn-link-white cs-modal-open-btn" data-modal-target="modal-morpheus">
+          Правила и регламент процедуры →
+        </button>
+      </div>
+    </div>
+    
+    <!-- Фото 16:9 для Morpheus 8 -->
+    <div class="cs-oct-flash-media">
+      <img src="https://static.tildacdn.com/tila3364-3036-4066-b733-613733333562/promo_morpheus_lift.jpg" alt="Morpheus 8 — глубокое обновление кожи лица и шеи" class="cs-oct-flash-img" loading="lazy">
+    </div>
+  </div>
+
+  <!-- Сетка из 3 программ месяца -->
+  <div class="cs-oct-cards-grid">
+    
+    <!-- Карточка 1: PDRN для зоны век («Свежий взгляд») -->
+    <div class="cs-oct-card">
+      <div class="cs-card-media">
+        <img src="https://static.tildacdn.com/tila3432-3332-4964-a633-346232316138/promo_pdrn_eyes.jpg" alt="PDRN для зоны век — Свежий взгляд" class="cs-card-img" loading="lazy">
+        <span class="cs-card-badge">Инъекционный фокус • Зона век</span>
+      </div>
+
+      <div class="cs-card-body">
+        <div>
+          <h3 class="cs-card-title">PDRN: Программа «Свежий взгляд»</h3>
+          <div class="cs-card-aim">Тонкая кожа век, мелкие морщины, тёмные круги и склонность к отёчности</div>
+          <ul class="cs-card-list">
+            <li>Стимуляция выработки коллагена и укрепление дермы век</li>
+            <li>Глубокое клеточное увлажнение и осветление зоны под глазами</li>
+            <li>Фиксация цены 4 500 ₽ на весь курс при старте в ноябре</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="cs-card-value-box">
+            <div class="cs-card-value-main">4 500 ₽ вместо 6 500 ₽ за процедуру</div>
+            <div class="cs-card-value-sub">
+              Специальная цена ноября на инъекционный сеанс PDRN. При начале медицинского курса в ноябре цена 4 500 ₽ фиксируется на все 3–4 процедуры курса.
+            </div>
+            <div class="cs-card-limit-note">
+              <span class="cs-card-limit-dot"></span>
+              <span>Выгода 2 000 ₽ на каждый визит</span>
+            </div>
+          </div>
+
+          <div class="cs-card-actions">
+            <a href="#popup:zayavka" class="cs-btn-primary-black cs-promo-trigger" data-promo-name="PDRN для зоны век «Свежий взгляд» (4 500 ₽)">
+              Записаться на PDRN
+            </a>
+            <button type="button" class="cs-btn-outline-details cs-modal-open-btn" data-modal-target="modal-pdrn">
+              Условия
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Карточка 2: Первое знакомство с Катрин -->
+    <div class="cs-oct-card">
+      <div class="cs-card-media">
+        <img src="https://static.tildacdn.com/tild6265-3531-4664-b530-663931333865/promo_intro_consulta.jpg" alt="Первое знакомство с Катрин" class="cs-card-img" loading="lazy">
+        <span class="cs-card-badge">Для новых пациентов</span>
+      </div>
+
+      <div class="cs-card-body">
+        <div>
+          <h3 class="cs-card-title">Первое знакомство с «Катрин»</h3>
+          <div class="cs-card-aim">Не уверены, какая процедура вам действительно необходима?</div>
+          <ul class="cs-card-list">
+            <li>Очная медицинская консультация врача-косметолога</li>
+            <li>Детальная оценка состояния кожи и эстетической задачи</li>
+            <li>Составление персонального плана процедур на 3 месяца</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="cs-card-value-box">
+            <div class="cs-card-value-main">Стоимость консультации засчитывается в процедуру</div>
+            <div class="cs-card-value-sub">
+              При проведении процедуры по назначению врача в течение 7 календарных дней стоимость консультации полностью засчитывается в её оплату.
+            </div>
+            <div class="cs-card-limit-note">
+              <span class="cs-card-limit-dot"></span>
+              <span>Рабочий лимит: 15 консультаций на ноябрь</span>
+            </div>
+          </div>
+
+          <div class="cs-card-actions">
+            <a href="#popup:zayavka" class="cs-btn-primary-black cs-promo-trigger" data-promo-name="Первое знакомство с Катрин (Консультация с зачетом)">
+              Записаться к врачу
+            </a>
+            <button type="button" class="cs-btn-outline-details cs-modal-open-btn" data-modal-target="modal-intro">
+              Условия
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Карточка 3: Программа «Рекомендуй Катрин» -->
+    <div class="cs-oct-card">
+      <div class="cs-card-media">
+        <img src="https://static.tildacdn.com/tild6638-3666-4136-a337-366633646465/promo_referral_trust.jpg" alt="Программа лояльности Рекомендуй Катрин" class="cs-card-img" loading="lazy">
+        <span class="cs-card-badge">Программа лояльности • Доверие</span>
+      </div>
+
+      <div class="cs-card-body">
+        <div>
+          <h3 class="cs-card-title">Привилегия «Рекомендуй Катрин»</h3>
+          <div class="cs-card-aim">Разделите заботу о здоровье и красоте с близкими</div>
+          <ul class="cs-card-list">
+            <li>Новый пациент получает 2 000 бонусов на первый визит</li>
+            <li>Вы получаете 2 000 бонусов после оплаченного визита друга</li>
+            <li>1 бонус = 1 рубль (списание до 2 000 бонусов за визит)</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="cs-card-value-box">
+            <div class="cs-card-value-main">2 000 бонусов другу + 2 000 бонусов вам</div>
+            <div class="cs-card-value-sub">
+              Бонус действует 60 дней при минимальном чеке услуги от 10 000 ₽. Новому пациенту достаточно назвать ваше имя и телефон при записи.
+            </div>
+            <div class="cs-card-limit-note">
+              <span class="cs-card-limit-dot"></span>
+              <span>Для постоянных и новых пациентов</span>
+            </div>
+          </div>
+
+          <div class="cs-card-actions">
+            <a href="#popup:zayavka" class="cs-btn-primary-black cs-promo-trigger" data-promo-name="Программа лояльности: Рекомендуй Катрин">
+              Рекомендовать клинику
+            </a>
+            <button type="button" class="cs-btn-outline-details cs-modal-open-btn" data-modal-target="modal-referral">
+              Условия
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Медицинский дисклеймер -->
+  <div class="cs-oct-disclaimer">
+    Имеются противопоказания. Необходима предварительная консультация врача-специалиста. Медицинские услуги оказываются ООО «Катрин», лицензия на осуществление медицинской деятельности. Все специальные предложения ноября 2026 года действуют строго по 30.11.2026.
+  </div>
+
+  <!-- ========================================================
+       МОДАЛЬНЫЕ ОКНА УСЛОВИЙ (СТРОГО ПО ОФИЦИАЛЬНЫМ РЕГЛАМЕНТАМ)
+       ======================================================== -->
+
+  <!-- Модальное окно: Morpheus 8 -->
+  <div id="modal-morpheus" class="cs-modal-backdrop">
+    <div class="cs-modal-dialog">
+      <button type="button" class="cs-modal-close" aria-label="Закрыть">&times;</button>
+      <div class="cs-modal-header">
+        <div class="cs-modal-badge">Регламент акции • 01.11–30.11.2026</div>
+        <h3 class="cs-modal-title">Morpheus 8 — Глубокое обновление кожи</h3>
+      </div>
+      <div class="cs-modal-body">
+        <h4>1. Суть предложения</h4>
+        <p>В ноябре 2026 года процедура микроигольчатого радиочастотного омоложения Morpheus 8 для зоны лица и шеи проводится по специальной цене <strong>55 000 ₽</strong> (обычная стоимость — 68 000 ₽). После процедуры в тот же день пациент получает восстанавливающую фотодинамическую терапию (ФДТ) стоимостью 3 000 ₽ в подарок.</p>
+
+        <h4>2. Протокол фотодинамической терапии (ФДТ)</h4>
+        <p>ФДТ проводится на аппарате фотодинамической лампы сразу после сеанса Morpheus 8: 10 минут жёлтого спектра + 10 минут зелёного спектра для ускоренной регенерации, снятия эритемы и выраженного противовоспалительного действия.</p>
+
+        <h4>3. Длительность и планирование</h4>
+        <p>Продолжительность комплексного приёма составляет 2,5 часа (анестезия, подготовка, аппаратная процедура Morpheus 8 и сеанс ФДТ). В связи с длительностью протокола количество мест в графике врачей ограничено.</p>
+
+        <h4>4. Лояльность и кэшбэк</h4>
+        <p>На процедуру начисляется стандартный кэшбэк клиники (3–7% в зависимости от суммы чека). Дополнительные персональные скидки не суммируются.</p>
+      </div>
+      <div class="cs-modal-footer">
+        <a href="#popup:zayavka" class="cs-btn-primary-black cs-promo-trigger" data-promo-name="Morpheus 8: Лицо + шея (55 000 ₽ + ФДТ в подарок)">
+          Записаться на процедуру
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно: PDRN для зоны век -->
+  <div id="modal-pdrn" class="cs-modal-backdrop">
+    <div class="cs-modal-dialog">
+      <button type="button" class="cs-modal-close" aria-label="Закрыть">&times;</button>
+      <div class="cs-modal-header">
+        <div class="cs-modal-badge">Регламент акции • 01.11–30.11.2026</div>
+        <h3 class="cs-modal-title">PDRN для зоны век — «Свежий взгляд»</h3>
+      </div>
+      <div class="cs-modal-body">
+        <h4>1. Суть специального предложения</h4>
+        <p>В ноябре 2026 года процедура инъекционной полинуклеотидной терапии (PDRN) для периорбитальной зоны проводится по специальной цене <strong>4 500 ₽</strong> вместо 6 500 ₽ за одну процедуру (выгода 2 000 ₽).</p>
+
+        <h4>2. Условия курсового лечения</h4>
+        <p>Клинический курс по протоколу составляет 3–4 процедуры с интервалом 2–3 недели. При проведении первой процедуры в период с 01 по 30 ноября 2026 года специальная цена 4 500 ₽ фиксируется за пациентом на все последующие процедуры назначенного курса.</p>
+
+        <h4>3. Показания</h4>
+        <p>Снижение тонуса и плотности тонкой кожи век, сеть мелких морщин («гусиные лапки»), потемнение периорбитальной зоны, пастозность и склонность к отёчности. Процедура проводится врачом-косметологом после очной оценки состояния кожи.</p>
+      </div>
+      <div class="cs-modal-footer">
+        <a href="#popup:zayavka" class="cs-btn-primary-black cs-promo-trigger" data-promo-name="PDRN для зоны век «Свежий взгляд» (4 500 ₽)">
+          Записаться на процедуру
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно: Первое знакомство с Катрин -->
+  <div id="modal-intro" class="cs-modal-backdrop">
+    <div class="cs-modal-dialog">
+      <button type="button" class="cs-modal-close" aria-label="Закрыть">&times;</button>
+      <div class="cs-modal-header">
+        <div class="cs-modal-badge">Регламент программы • Ноябрь 2026</div>
+        <h3 class="cs-modal-title">Первое знакомство с «Катрин»</h3>
+      </div>
+      <div class="cs-modal-body">
+        <h4>1. Для кого разработана программа</h4>
+        <p>Для новых пациентов с запросами на омоложение, улучшение качества кожи, удаление пигментации, сосудов, постакне или коррекцию овала лица, которые пока не определились с методом.</p>
+
+        <h4>2. Что включено</h4>
+        <ul>
+          <li>Очная консультация врача-косметолога клиники.</li>
+          <li>Диагностика кожи и анализ противопоказаний.</li>
+          <li>Составление персонального плана процедур ориентировочно на 3 месяца.</li>
+        </ul>
+
+        <h4>3. Правила зачета стоимости</h4>
+        <p>Стоимость консультации полностью засчитывается в стоимость процедуры, назначенной врачом и проведенной в течение 7 календарных дней с момента консультации. Предложение действует только для пациентов, у которых ранее не было состоявшихся визитов в «Катрин».</p>
+      </div>
+      <div class="cs-modal-footer">
+        <a href="#popup:zayavka" class="cs-btn-primary-black cs-promo-trigger" data-promo-name="Первое знакомство с Катрин (Консультация с зачетом)">
+          Записаться на консультацию
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно: Программа «Рекомендуй Катрин» -->
+  <div id="modal-referral" class="cs-modal-backdrop">
+    <div class="cs-modal-dialog">
+      <button type="button" class="cs-modal-close" aria-label="Закрыть">&times;</button>
+      <div class="cs-modal-header">
+        <div class="cs-modal-badge">Регламент программы • Программа лояльности</div>
+        <h3 class="cs-modal-title">Привилегия «Рекомендуй Катрин»</h3>
+      </div>
+      <div class="cs-modal-body">
+        <h4>1. Для кого действует программа</h4>
+        <p>Для постоянных пациентов клиники и их друзей, родственников или коллег, ранее не посещавших «Катрин».</p>
+
+        <h4>2. Привилегия для нового пациента</h4>
+        <p>Новый пациент при первом визите получает 2 000 приветственных бонусов (1 бонус = 1 рубль), которыми можно оплатить до 2 000 рублей от стоимости любых медицинских услуг клиники при чеке от 10 000 рублей.</p>
+
+        <h4>3. Вознаграждение постоянного пациента</h4>
+        <p>После того как приглашенный друг совершил и оплатил первый визит на сумму от 10 000 рублей, на персональный бонусный счёт постоянного пациента начисляется 2 000 бонусов. Срок действия бонусов — 60 календарных дней.</p>
+
+        <h4>4. Как активировать</h4>
+        <p>При записи новому пациенту достаточно назвать ФИО и контактный номер телефона рекомендующего пациента.</p>
+      </div>
+      <div class="cs-modal-footer">
+        <a href="#popup:zayavka" class="cs-btn-primary-black cs-promo-trigger" data-promo-name="Программа лояльности: Рекомендуй Катрин">
+          Рекомендовать клинику
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       АВТОНОМНЫЙ FALLBACK-ПОПАП ЗАПИСИ (НА СЛУЧАЙ ОТСУТСТВИЯ TILDA JS)
+       ======================================================== -->
+  <div id="catherine-promo-fallback-popup" class="cs-modal-backdrop">
+    <div class="cs-modal-dialog" style="max-width: 480px;">
+      <button type="button" class="cs-modal-close" aria-label="Закрыть">&times;</button>
+      <div class="cs-modal-header">
+        <div class="cs-modal-badge">Онлайн-запись в клинику</div>
+        <h3 class="cs-modal-title" style="font-size: 22px;">Запись по специальному предложению</h3>
+      </div>
+      <form id="cs-fallback-record-form" onsubmit="event.preventDefault(); alert('Спасибо! Ваша заявка принята. Администратор клиники «Катрин» свяжется с вами для подтверждения даты и времени визита.'); document.getElementById('catherine-promo-fallback-popup').classList.remove('is-active');">
+        <div class="cs-fallback-form-group">
+          <label>Выбранная программа</label>
+          <input type="text" id="cs-fallback-promo-input" readonly value="">
+        </div>
+        <div class="cs-fallback-form-group">
+          <label>Ваше имя</label>
+          <input type="text" required placeholder="Как к вам обращаться?">
+        </div>
+        <div class="cs-fallback-form-group">
+          <label>Номер телефона</label>
+          <input type="tel" required placeholder="+7 (___) ___-__-__">
+        </div>
+        <button type="submit" class="cs-btn-primary-black" style="width: 100%; padding: 15px;">
+          Отправить заявку
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       ИНТЕЛЛЕКТУАЛЬНЫЙ СКРИПТ ИНТЕГРАЦИИ С POPUP TILDA
+       ======================================================== -->
+  <script>
+    (function() {
+      // 1. Управление внутренними модальными окнами регламентов
+      function initModals() {
+        var openButtons = document.querySelectorAll('.cs-modal-open-btn');
+        var closeButtons = document.querySelectorAll('.cs-modal-close');
+        var backdrops = document.querySelectorAll('.cs-modal-backdrop');
+
+        openButtons.forEach(function(btn) {
+          btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var targetId = this.getAttribute('data-modal-target');
+            var targetModal = document.getElementById(targetId);
+            if (targetModal) {
+              targetModal.classList.add('is-active');
+              document.body.style.overflow = 'hidden';
+            }
+          });
+        });
+
+        function closeModal(modal) {
+          modal.classList.remove('is-active');
+          document.body.style.overflow = '';
+        }
+
+        closeButtons.forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var modal = this.closest('.cs-modal-backdrop');
+            if (modal) closeModal(modal);
+          });
+        });
+
+        backdrops.forEach(function(backdrop) {
+          backdrop.addEventListener('click', function(e) {
+            if (e.target === this) {
+              closeModal(this);
+            }
+          });
+        });
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            backdrops.forEach(function(modal) {
+              if (modal.classList.contains('is-active')) {
+                closeModal(modal);
+              }
+            });
+          }
+        });
+      }
+
+      // 2. Интеграция с официальным Tilda Popup (#popup:zayavka / rec608825704)
+      function initTildaTriggers() {
+        var promoButtons = document.querySelectorAll('.cs-promo-trigger');
+
+        promoButtons.forEach(function(btn) {
+          btn.addEventListener('click', function(e) {
+            var promoName = this.getAttribute('data-promo-name') || 'Специальное предложение ноября';
+
+            // Если клик был сделан из открытого окна условий — закрываем его
+            var parentModal = this.closest('.cs-modal-backdrop');
+            if (parentModal) {
+              parentModal.classList.remove('is-active');
+              document.body.style.overflow = '';
+            }
+
+            // Пытаемся передать название акции в официальный поп-ап Тильды
+            var tildaPopup = document.querySelector('[data-tooltip-hook="#popup:zayavka"]') ||
+                             document.getElementById('rec608825704') ||
+                             document.querySelector('.t-popup');
+
+            if (tildaPopup) {
+              // 1. Ищем текстовый заголовок/подзаголовок поп-апа Тильды для контекста
+              var descr = tildaPopup.querySelector('.t-popup__descr, .t-form__text, .t-descr');
+              if (descr) {
+                if (!descr.getAttribute('data-original-text')) {
+                  descr.setAttribute('data-original-text', descr.innerHTML);
+                }
+                descr.innerHTML = descr.getAttribute('data-original-text') + 
+                  '<br><strong style="color: #c5a265; display: inline-block; margin-top: 6px;">Запись по акции: ' + promoName + '</strong>';
+              }
+
+              // 2. Ищем или динамически создаем скрытое поле input promo_name
+              var form = tildaPopup.querySelector('form');
+              if (form) {
+                var hiddenInput = form.querySelector('input[name="promo_name"]');
+                if (!hiddenInput) {
+                  hiddenInput = document.createElement('input');
+                  hiddenInput.type = 'hidden';
+                  hiddenInput.name = 'promo_name';
+                  form.appendChild(hiddenInput);
+                }
+                hiddenInput.value = promoName;
+              }
+
+              // 3. Вызываем встроенный метод Тильды t702_showPopup или t_popup__showPopup
+              var popupId = tildaPopup.getAttribute('data-record-id') || '608825704';
+              if (typeof window.t702_showPopup === 'function') {
+                window.t702_showPopup(popupId);
+              } else if (typeof window.t_popup__showPopup === 'function') {
+                window.t_popup__showPopup(popupId);
+              }
+            } else {
+              // Fallback, если блок поп-апа Тильды не подключен на текущей странице
+              e.preventDefault();
+              var fallbackPopup = document.getElementById('catherine-promo-fallback-popup');
+              var fallbackInput = document.getElementById('cs-fallback-promo-input');
+              if (fallbackPopup && fallbackInput) {
+                fallbackInput.value = promoName;
+                fallbackPopup.classList.add('is-active');
+                document.body.style.overflow = 'hidden';
+              }
+            }
+          });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          initModals();
+          initTildaTriggers();
+        });
+      } else {
+        initModals();
+        initTildaTriggers();
+      }
+    })();
+  </script>
+</div>

@@ -1,0 +1,16 @@
+{
+  "name": "catherine-salon-promos",
+  "version": "1.0.0",
+  "description": "Автономный динамический модуль спецпредложений клиники «Катрин» для вставки в Tilda (блок T123)",
+  "main": "dist/promos.min.js",
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
+  "keywords": [
+    "tilda",
+    "promos",
+    "catherine-salon"
+  ],
+  "author": "Catherine Clinic",
+  "license": "ISC"
+}
